@@ -11,15 +11,6 @@ def fibonacci_recursive(n):
         return 1
     return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
 
-# def fibonacci_memoization(n, memo={}):
-#     if n in memo:
-#         return memo[n]
-#     if n <= 0:
-#         return 0
-#     elif n == 1:
-#         return 1
-#     memo[n] = fibonacci_memoization(n - 1, memo) + fibonacci_memoization(n - 2, memo)
-#     return memo[n]
 def fibonacci_memoization(n, memo=None):
     if memo is None:
         memo = {}  # Reset memo dictionary for each call
@@ -86,9 +77,9 @@ def fibonacci_binet(n):
 small_series = [5, 7, 10, 12, 15, 17, 20, 22, 25, 27, 30, 32, 35, 37, 40, 42, 45]
 big_series = [501, 631, 794, 1000, 1259, 1585, 1995, 2512, 3162, 3981, 5012, 6310, 7943, 10000, 12589, 15849]
 
-# print("Recursive Method (O(2^n)): [Used only for small series due to exponential time complexity]")
-# for n in small_series:
-#     print(f"F({n}) = {fibonacci_recursive(n)}")
+print("Recursive Method (O(2^n)): [Used only for small series due to exponential time complexity]")
+for n in small_series:
+    print(f"F({n}) = {fibonacci_recursive(n)}")
 
 print("\nMemoization (O(n)): [Efficient for both small and big series]")
 for n in small_series + big_series:
